@@ -1,0 +1,90 @@
+{
+    "Foundation": [
+        {"question": "1. The organization recognizes the need for a cloud cost management function.","no": "q1","answer":"","comment":""},
+        {"question": "2. There is executive buy-in for cloud cost management.","no": "q2","answer":"","comment":""}
+    ],
+    "Roles":[
+        {"question": "1. We have identified individuals who perform the cloud cost management function.","no": "q1","answer":"","comment":""},
+        {"question": "2. We have identified individual(s) accountable for the cloud cost management function.","no": "q2","answer":"","comment":""},
+        {"question": "3. Staff actively work to manage cloud costs as part of their role(s).","no": "q3","answer":"","comment":""},
+        {"question": "4. Cloud cost management functions are taken into account as part of staff's workload(s) for purposes of resourcing (e.g. their available time) and performance evaluations.","no": "q4","answer":"","comment":""},
+        {"question": "5. We have clearly documented roles and responsibilities relating to cloud cost management.","no": "q5","answer":"","comment":""}
+    ],
+    "Culture":[
+        {"question":"1. Our organization uses a common, consistent vocabulary to discuss cloud costs across teams and departments.","no":"q1","answer":"","comment":""},
+        {"question":"2. Staff who provision cloud services understand the billing structure of those resources.","no":"q2","answer":"","comment":""},
+        {"question":"3. Staff are conscious of cloud costs.","no":"q3","answer":"","comment":""},
+        {"question":"4. Our cost-consciousness informs our use of cloud resources.","no":"q4","answer":"","comment":""},
+        {"question":"5. Leadership instills a cost-conscious attitude toward cloud resources.","no":"q5","answer":"","comment":""},
+        {"question":"6. As a whole, our organization would agree that everyone is accountable for cloud costs.","no":"q6","answer":"","comment":""}
+    ],
+    "Architecture":[
+        {"question":"1. Individuals and teams who design cloud architecture have visibility into the cost efficiency of those architectures.","no":"q1","answer":"","comment":""},
+        {"question":"2. Cost efficiency is considered in the design phase.","no":"q2","answer":"","comment":""},
+        {"question":"3. Our architectures are efficient by design.","no":"q3","answer":"","comment":""},
+        {"question":"4. Teams can share/leverage/re-use templates and architectural patterns to improve cost efficiency.","no":"q4","answer":"","comment":""},
+        {"question":"5. We set cost efficiency targets for our workloads (e.g. aim to operate at a certain cost per request or per monthly active user).","no":"q5","answer":"","comment":""}
+    ],
+    "Visibility":[
+        {"question":"1. We use consistent account structure and tagging practices to provide visibility into our spend.","no":"q1","answer":"","comment":""},
+        {"question":"2. Our account and tagging policy enables reporting that gives us information about cloud spend in a useful, consumable form (e.g. spend breakdowns by application, business unit, product line, and/or workload). ","no":"q2","answer":"","comment":""},
+        {"question":"3. Our reports allow us to accurately and transparently showback/chargeback cloud costs.","no":"q3","answer":"","comment":""},
+        {"question":"4. Teams who provision cloud services have visibility into the cost/spend of those services.","no":"q4","answer":"","comment":""},
+        {"question":"5. Individuals who provision cloud services have visibility into the cost/spend of those services.","no":"q5","answer":"","comment":""},
+        {"question":"6. We have sufficient visibility into cloud spend (i.e. are able to answer all the questions we ask about what's driving our spend).","no":"q6","answer":"","comment":""},
+        {"question":"7. We have defined role-based dashboards that give appropriate reporting about cloud cost spend to each party.","no":"q7","answer":"","comment":""},
+        {"question":"8. Dashboards and reports showing spend over time are presented with a trend line.","no":"q8","answer":"","comment":""},
+        {"question":"9. Dashboards and reports showing spend over time are presented with a budget line.","no":"q9","answer":"","comment":""},
+        {"question":"10. It's easy for interested parties to run reports to answer questions and gain insights into cloud cost spend.","no":"q10","answer":"","comment":""},
+        {"question":"11. If we were wasting money on cloud resources that weren't serving a useful purpose (e.g. running instances not being used), we would notice immediately.","no":"q11","answer":"","comment":""},
+        {"question":"12. If action were taken that would lead to a team or business unit trending outside of its budget, we would notice immediately.","no":"q12","answer":"","comment":""}
+    ],
+    "Budget":[
+        {"question":"1. We make effective use of product budgets in managing cloud costs.","no":"q1","answer":"","comment":""},
+        {"question":"2. We make effective use of team budgets in managing cloud costs.","no":"q2","answer":"","comment":""},
+        {"question":"3. We make effective use of project budgets in managing cloud costs.","no":"q3","answer":"","comment":""},
+        {"question":"4. Based on past experience, we can forecast our cloud spend over the next 180 days with +/- 20% accuracy.","no":"q4","answer":"","comment":""},
+        {"question":"5. Based on past experience, we can forecast our cloud spend over the next 365 days with +/- 30% accuracy.","no":"q5","answer":"","comment":""},
+        {"question":"6. We can accurately use figures for an anticipated increase in workload demand to forecast the resultant increase in infrastructure costs (e.g. if users were to increase by 300%, we know how that would impact costs).","no":"q6","answer":"","comment":""}
+    ],
+    "Governance":[
+        {"question":"1. We have policies that automate enforcement of our cost-tagging practices.","no":"q1","answer":"","comment":""},
+        {"question":"2. Staff who provision cloud services are held accountable for the cost efficiency of those services.","no":"q2","answer":"","comment":""},
+        {"question":"3. We have policies in place to ensure that only cost-efficient architectures are used.","no":"q3","answer":"","comment":""},
+        {"question":"4. We have mechanisms/processes in place that prevent users or teams from provisioning resources that would cost an inordinate amount.","no":"q4","answer":"","comment":""},
+        {"question":"5. We have mechanisms in place that generate automated alerts if we are wasting money on cloud resources that aren't serving a useful purpose (e.g. running instances not being used).","no":"q5","answer":"","comment":""},
+        {"question":"6. We generate actionable reports on cloud cost management metrics for all roles and teams involved.","no":"q6","answer":"","comment":""}
+    ],
+    "Value":[
+        {"question":"1. We are confident that our cloud spend gives us good value for the cost.","no":"q1","answer":"","comment":""},
+        {"question":"2. We can effectively analyze the value of cloud spend.","no":"q2","answer":"","comment":""},
+        {"question":"3. We can effectively demonstrate to the business that our cloud spend gives us good value for the cost.","no":"q3","answer":"","comment":""},
+        {"question":"4. We report on cloud costs in relation to business value metrics (e.g. cost to serve each customer, cost relative to product revenue).","no":"q4","answer":"","comment":""},
+        {"question":"5. Our processes enable product owners to make informed decisions about trade-offs between speed, cost, and quality.","no":"q5","answer":"","comment":""},
+        {"question":"6. Our processes enable executives to make informed decisions about trade-offs between speed, cost, and quality.","no":"q6","answer":"","comment":""}
+    ],
+    "right":[
+        {"question":"1 .We regularly perform right-sizing (i.e. ensuring that resources are not overprovisioned).","no":"q1","answer":"","comment":""},
+        {"question":"2. We perform right-sizing on a continuous basis.","no":"q2","answer":"","comment":""},
+        {"question":"3. Right-sizing recommendations are tracked in a ticketing system.","no":"q3","answer":"","comment":""},
+        {"question":"4. Cost efficiency changes and work orders are tracked and prioritized in the backlog.","no":"q4","answer":"","comment":""},
+        {"question":"5. Cost efficiency changes and work orders are consistently acted upon by teams when appropriate. ","no":"q5","answer":"","comment":""},
+        {"question":"6. The generation of right-sizing recommendations is automated.","no":"q6","answer":"","comment":""},
+        {"question":"7. We generate actionable reports on right-sizing activities.","no":"q7","answer":"","comment":""}
+    ],
+    "Purchase":[
+        {"question":"1. We have a documented process for purchasing RIs/Savings Plans.","no":"q1","answer":"","comment":""},
+        {"question":"2. The purchasing of savings plans and reserved instances is centralized (e.g. performed by a single central team or individual).","no":"q2","answer":"","comment":""},
+        {"question":"3. Savings plans are purchased in a linked AWS account with no usage, to maximize cost savings across the organization's accounts.","no":"q3","answer":"","comment":""},
+        {"question":"4. We always make use of the most appropriate purchase discounts for cloud services (e.g. spot instances, reserved instances, savings plans).","no":"q4","answer":"","comment":""},
+        {"question":"5. Our process for purchasing discounts effectively balances flexibility, risk, and cost.","no":"q5","answer":"","comment":""},
+        {"question":"6. We generate actionable reports on our use of purchasing discounts.","no":"q6","answer":"","comment":""}
+    ],
+    "Process":[
+        {"question":"1. We have documented processes and procedures for how to perform cloud cost management functions (e.g. an SOP or training manual).","no":"q1","answer":"","comment":""},
+        {"question":"2. We have measures in place to assess the effectiveness of our cloud cost management function.","no":"q2","answer":"","comment":""},
+        {"question":"3. We have KPIs for our cloud cost management function/program.","no":"q3","answer":"","comment":""},
+        {"question":"4. We have a documented process for how to keep abreast of changes in the cloud that could affect cloud cost management.","no":"q4","answer":"","comment":""},
+        {"question":"5. We are continually working to improve our cloud cost management function.","no":"q5","answer":"","comment":""}
+    ]
+}

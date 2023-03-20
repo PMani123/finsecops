@@ -1,0 +1,157 @@
+.ro-full {
+    padding: 0px;
+    margin: 0px;
+}
+
+.ro-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: url('../images/logo-finsecops.svg') no-repeat;
+    background-size: contain;
+}
+
+.head-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    margin-left: 150px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    min-height: 250px;
+}
+
+.underline {
+    border-bottom: 3px solid black;
+}
+
+Link {
+    color: #242424;
+}
+
+.head-left-p {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
+    color: #FFFFFF;
+    max-width: 390px;
+    min-height: 122px;
+    text-align: left;
+    margin: 0px;
+}
+
+.current {
+    color: #242424;
+}
+
+.logo {
+    margin-right: 150px;
+}
+
+.btn-head {
+
+    font-weight: 600;
+    font-size: 18px;
+    text-align: center;
+    color: #FFFFFF;
+
+    width: 181px;
+    height: 48px;
+
+    border: 2px solid #FFFFFF;
+    border-radius: 10px;
+    background: linear-gradient(84.52deg, #680FD2 0%, #EE691E 100%);
+}
+
+.ro-mid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.strongly {
+    margin: 5px;
+    text-align: right;
+    margin-right: 210px;
+    color: #680FD2;
+
+}
+
+.ro-mid1 {
+    width: 990px;
+    margin-top: 50px;
+}
+
+.ro-mid1-head {
+    display: flex;
+    justify-content: space-around;
+    min-height: 48px;
+    left: 465px;
+    top: 401px;
+    background: #FFF1EA;
+    border-bottom: 1px solid #BEBEBE;
+    border-radius: 8px 8px 0px 0px;
+}
+
+.ro-mid1-head>p {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.ro-mid1-p {
+    background-color: #FFFFFF;
+    padding: 20px;
+}
+
+.ro-mid-each {
+    display: flex;
+    justify-content: space-between;
+}
+
+.ro-mid-each p {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    color: #242424;
+}
+
+.input-range {
+    width: 330px;
+}
+
+.comment {
+    width: 30px;
+    height: 50px;
+}
+
+.comment-input {
+    width: 850px;
+    height: 50px;
+}
+
+.bottom {
+    height: 48px;
+    left: 0px;
+    top: 935px;
+    background: #680FD2;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.bottom p {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color: #FFFFFF;
+    margin-right: 80px;
+}

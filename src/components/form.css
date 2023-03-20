@@ -1,0 +1,194 @@
+.field {
+    width: 50%;
+    margin: 15px;
+}
+
+.re-head1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #E0E0E0;
+    background-color: #FFFFFF;
+    padding: 5px;
+}
+
+.each-flex-row {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.form-fully {
+    margin-top: 10px;
+}
+
+Button {
+    /* width: 0px; */
+    /* padding: 8px 16px; */
+    margin-right: 12px;
+}
+
+.btn-form-last {
+    margin-top: 12px;
+    padding-top: 12px;
+    /* border-top: 1px solid #E0E0E0; */
+    float: right;
+    margin-right: 5%;
+    display: flex;
+}
+
+.editing {
+    margin-right: 12px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-form-last1 {
+    border-top: 1px solid #E0E0E0;
+    margin-top: 20px;
+}
+
+.submit-btn12 {
+    background: linear-gradient(78.2deg, #680FD2 0%, #EE691E 100%);
+}
+
+.bg-text12 {
+    background-color: #F1F1F1 !important;
+}
+
+.com-last {
+    width: 96%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 2%;
+}
+
+.form-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fo-text {
+    border: none;
+    background: #F1F1F1;
+    padding: 10px;
+    font-family: 'Poppins';
+}
+
+.error {
+    margin: 0px;
+    font-size: 12px;
+    color: #ff0000;
+}
+
+/* 
+.inp-above {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+} */
+
+.final-text {
+    width: 95% !important;
+    margin-top: 20px;
+}
+
+.p-dialog-title {
+    font-family: 'Poppins';
+}
+
+.input-field {
+    width: 90%;
+    height: 42px;
+    background: #F1F1F1;
+    border-radius: 4px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: #AAAAAA;
+    border: none;
+    /* margin: 20px; */
+    padding: 20px 25px;
+}
+
+.input-data {
+    padding: 24px;
+}
+
+.input1-each {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.input1-each>div {
+    width: 80%;
+}
+
+.form-sub {
+    display: flex;
+    padding: 24px;
+    float: right;
+}
+
+.textarea-last {
+    width: 100%;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.p-fluid .p-inputtext {
+    border: none;
+    background: #F1F1F1;
+    border-radius: 4px;
+}
+
+textarea {
+    resize: none;
+}
+
+.phonecode {
+    width: 100%;
+    height: 45px;
+    border: none;
+    background: #F1F1F1;
+    border-radius: 4px;
+    padding: 4px 8px;
+}
+
+.bothfield {
+    display: flex;
+}
+
+.fielding1 {
+    display: flex;
+    margin: 0px 15px;
+}
+
+.field12 {
+    margin: 15px 0px;
+}
+
+.field123 {
+    margin-left: 15px;
+}
+
+.p-error {
+    font-size: smaller;
+}

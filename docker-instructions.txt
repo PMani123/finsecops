@@ -1,0 +1,33 @@
+// Dockerfile 
+FROM node:alpine
+WORKDIR /app
+ENV PATH /app/node_modules/.bin:$PATH
+COPY package.json ./
+COPY package-lock.json ./
+RUN npm install --silent
+RUN npm install react-scripts@5.0.1 -g --silent
+COPY . ./
+CMD ["npm", "start"]
+
+// .dockerignore
+node_modules
+build
+.dockerignore
+Dockerfile
+Dockerfile.prod
+
+// creating the docker image
+docker build -t finsecopsdocker:dev .
+
+// containerize the image
+docker run -it -p 3000:3000 finsecopsdocker:dev 
+
+// create and login in dockerhub website
+docker login
+docker images
+
+// To push the docker image
+docker tag image_name dockerhub_username/repo_name
+docker push dockerhub_username/repo_name
+docker pull pmanikandan/finsecops
+docker run -p 3000:3000 pmanikandan/finsecops
