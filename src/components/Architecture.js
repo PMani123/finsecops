@@ -102,7 +102,7 @@ const Architecture = (props) => {
     try {
       function findScreenSize() {
         // console.log("size changing of screen");
-        if (window.innerWidth < 1200 ) {
+        if (window.innerWidth < 1024) {
           setScreenSize(false);
         }
       }
@@ -449,7 +449,7 @@ const Architecture = (props) => {
   }
   return (
     <div onClick={() => fullquestionclose()}>
-      {dimensions.width >= 1200  && screenSize ? (
+      {dimensions.width >= 1024 && screenSize ? (
         <div className="ro-full">
           <Header />
 
@@ -530,7 +530,7 @@ const Architecture = (props) => {
                   <button
                     className={`com-btn ${fullDone ? "" : "revi-pen"}`}
                     onClick={() => onClick("displayBasic")}
-                    // onClick={() => setReview(!review)}
+                  // onClick={() => setReview(!review)}
                   >
                     Review <BsChevronRight />
                   </button>
@@ -539,8 +539,8 @@ const Architecture = (props) => {
                     <div className="btn-hovering">
                       <button
                         className={"com-btn revi-pen"}
-                        // onClick={() => onClick("displayBasic")}
-                        // onClick={() => setReview(!review)}
+                      // onClick={() => onClick("displayBasic")}
+                      // onClick={() => setReview(!review)}
                       >
                         Review <BsChevronRight />
                       </button>
@@ -745,35 +745,35 @@ const Architecture = (props) => {
                       </div>
                       {seeing ? (
                         <div className="div-comment">
-                        <div
-                        className="div1-com"
-                          onClick={(e) => {
-                            e.preventDefault();
-                            e.stopPropagation();
-                          }}
-                        >
-                          <textarea
-                            rows="3"
-                            type="text"
-                            autoFocus
-                            name={data.no}
-                            placeholder="Write your comment here.."
-                            value={data.comment}
-                            onChange={(e) => changing(e)}
-                            className="comment-input"
-                          />
-                          <button
+                          <div
+                            className="div1-com"
                             onClick={(e) => {
-                              commentDisplay(data.no);
+                              e.preventDefault();
+                              e.stopPropagation();
                             }}
-                            className={
-                              data.comment ? `save-btnx` : `save-btnx1`
-                            }
                           >
-                            Save
-                          </button>
+                            <textarea
+                              rows="3"
+                              type="text"
+                              autoFocus
+                              name={data.no}
+                              placeholder="Write your comment here.."
+                              value={data.comment}
+                              onChange={(e) => changing(e)}
+                              className="comment-input"
+                            />
+                            <button
+                              onClick={(e) => {
+                                commentDisplay(data.no);
+                              }}
+                              className={
+                                data.comment ? `save-btnx` : `save-btnx1`
+                              }
+                            >
+                              Save
+                            </button>
+                          </div>
                         </div>
-                      </div>
                       ) : (
                         <></>
                       )}

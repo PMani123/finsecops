@@ -595,21 +595,16 @@ const Last = () => {
         console.log("sendingPost  - ", sendingPost);
         // //console.log("sendingPost ------------------------", sendingPost);
         const res = await axios.post(
-          // "https://us-central1-development-328905.cloudfunctions.net/HelloWorld",
           "https://mlmatassappsvc-6yditixtuq-uc.a.run.app",
+          // "https://finopsassessor-tnyo2gb4zq-uw.a.run.app",
           sendingPost,
           {
             headers: {
-              "Content-Type": "application/json;charset=UTF-8",
               "Access-Control-Allow-Origin": "*",
+              "Content-Type": "application/json;charset=UTF-8",
             },
           }
         );
-
-        // https://us-central1-development-328905.cloudfunctions.net/HelloWorld
-        // https://jsonplaceholder.typicode.com/comments
-        // "https://mlmatassappsvc-6yditixtuq-uc.a.run.app/"
-        // );
 
         console.log("res.data - ", res?.data);
         setName(res?.data.firstname);
@@ -680,32 +675,32 @@ const Last = () => {
         });
         setIsLoading(false);
 
-        localStorage.removeItem("Post-reviewData");
-        localStorage.removeItem("userDetails");
+        // localStorage.removeItem("Post-reviewData");
+        // localStorage.removeItem("userDetails");
 
-        localStorage.removeItem("foundDone");
-        localStorage.removeItem("roleDone");
-        localStorage.removeItem("culDone");
-        localStorage.removeItem("archiDone");
-        localStorage.removeItem("visiDone");
-        localStorage.removeItem("budgetDone");
-        localStorage.removeItem("govDone");
-        localStorage.removeItem("valueDone");
-        localStorage.removeItem("rightDone");
-        localStorage.removeItem("purDone");
-        localStorage.removeItem("processDone");
+        // localStorage.removeItem("foundDone");
+        // localStorage.removeItem("roleDone");
+        // localStorage.removeItem("culDone");
+        // localStorage.removeItem("archiDone");
+        // localStorage.removeItem("visiDone");
+        // localStorage.removeItem("budgetDone");
+        // localStorage.removeItem("govDone");
+        // localStorage.removeItem("valueDone");
+        // localStorage.removeItem("rightDone");
+        // localStorage.removeItem("purDone");
+        // localStorage.removeItem("processDone");
 
-        localStorage.removeItem("foundation");
-        localStorage.removeItem("roles");
-        localStorage.removeItem("culture");
-        localStorage.removeItem("archi");
-        localStorage.removeItem("visi");
-        localStorage.removeItem("budget");
-        localStorage.removeItem("governance");
-        localStorage.removeItem("value");
-        localStorage.removeItem("right");
-        localStorage.removeItem("purchase");
-        localStorage.removeItem("process");
+        // localStorage.removeItem("foundation");
+        // localStorage.removeItem("roles");
+        // localStorage.removeItem("culture");
+        // localStorage.removeItem("archi");
+        // localStorage.removeItem("visi");
+        // localStorage.removeItem("budget");
+        // localStorage.removeItem("governance");
+        // localStorage.removeItem("value");
+        // localStorage.removeItem("right");
+        // localStorage.removeItem("purchase");
+        // localStorage.removeItem("process");
 
         // console.log("heloooooo", sendingData, userDetails);
 

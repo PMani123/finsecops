@@ -21,10 +21,12 @@ import Review from "./components/Review";
 import Form from "./components/Form";
 import { PrimeForm } from "./components/PrimeForm";
 import data from "./userDataGet.json";
+import Error from "./components/Error";
 
 import "primereact/resources/themes/lara-light-indigo/theme.css"; //theme
 import "primereact/resources/primereact.min.css"; //core css
 import "primeicons/primeicons.css"; //icons
+import Sent from "./components/Sent";
 
 function App() {
   const [found, setFound] = useState([]);
@@ -53,15 +55,6 @@ function App() {
       <BrowserRouter >
       {/* <BrowserRouter basename="/finsecops"> */}
         <Routes>
-
-          {/* {dataArray.map((ele,idx)=>{
-            return(
-              <Route path={} element={} />
-            )
-          })} */}
-
-          {/* <Route path="/" element={<Roles1 />} /> */}
-
           <Route path="/chart" element={<Chart />} />
           {/* <Route path="/foundation" element={<Foundation />} /> */}
           <Route path="/" element={<Foundation name={found1} data={found} />} />
@@ -78,6 +71,8 @@ function App() {
           <Route path="/last" element={<Last />} />
           <Route path="/prime" element={<PrimeForm />} />
           <Route path="/error" element={<ErrorPage />} />
+          <Route path="/error1" element={<Error />} />
+          <Route path="/sent" element={<Sent />} />
           {/* <Route path="/resize" element={<Resize />} /> */}
           {/* <Route path="/form" element={<Form />} /> */}
         </Routes>

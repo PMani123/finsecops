@@ -100,7 +100,7 @@ const Roles = (props) => {
     try {
       function findScreenSize() {
         // console.log("size changing of screen");
-        if (window.innerWidth < 1200) {
+        if (window.innerWidth < 1024) {
           setScreenSize(false);
         }
       }
@@ -448,7 +448,7 @@ const Roles = (props) => {
   }
   return (
     <div onClick={() => fullquestionclose()}>
-      {dimensions.width >= 1200 &&  screenSize ? (
+      {dimensions.width >= 1024 &&  screenSize ? (
         <div className="ro-full">
           <Header />
 

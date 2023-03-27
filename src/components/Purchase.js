@@ -107,7 +107,7 @@ const Purchase = (props) => {
     //console.log("1st Useffect");
     try {
       function findScreenSize() {
-        if (window.innerWidth < 1200 ) {
+        if (window.innerWidth < 1024 ) {
           setScreenSize(false);
         }
       }
@@ -492,7 +492,7 @@ const Purchase = (props) => {
   }
   return (
     <div onClick={() => fullquestionclose()}>
-      {dimensions.width >= 1200 && screenSize ? (
+      {dimensions.width >= 1024 && screenSize ? (
         <div className="ro-full">
           <Header />
 

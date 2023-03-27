@@ -13,6 +13,7 @@ import Form from "./Form";
 import { BsChatDotsFill } from "react-icons/bs";
 import { BsChevronRight } from "react-icons/bs";
 import ErrorPage from "./ErrorPage";
+// import Errorfrom "./Error";
 import { Dialog } from "primereact/dialog";
 import { Button } from "primereact/button";
 
@@ -96,7 +97,7 @@ const Foundation = (props) => {
   useEffect(() => {
     try {
       function findScreenSize() {
-        if (window.innerWidth < 1200) {
+        if (window.innerWidth < 1024) {
           setScreenSize(false);
         }
       }
@@ -317,7 +318,7 @@ const Foundation = (props) => {
   // console.log("allData foundation", allData.Foundation);
   return (
     <div onClick={() => fullquestionclose()}>
-      {dimensions.width >= 1200 && screenSize ? (
+      {dimensions.width >= 1024 && screenSize ? (
         <div>
           <div className="ro-full">
             <Header onClick={() => fullquestionclose()} />
@@ -397,7 +398,7 @@ const Foundation = (props) => {
                     <button
                       className={`com-btn ${fullDone ? "" : "revi-pen"}`}
                       onClick={() => onClick("displayBasic")}
-                      // onClick={() => setReview(!review)}
+                    // onClick={() => setReview(!review)}
                     >
                       Review <BsChevronRight />
                     </button>
@@ -406,8 +407,8 @@ const Foundation = (props) => {
                       <div className="btn-hovering">
                         <button
                           className={"com-btn revi-pen"}
-                          // onClick={() => onClick("displayBasic")}
-                          // onClick={() => setReview(!review)}
+                        // onClick={() => onClick("displayBasic")}
+                        // onClick={() => setReview(!review)}
                         >
                           Review <BsChevronRight />
                         </button>
@@ -500,7 +501,7 @@ const Foundation = (props) => {
                                 onChange={(e) => changing(e)}
                                 name={data.no}
                                 className="input-range"
-                                // className="rinpbor"
+                              // className="rinpbor"
                               />
                             )}
 

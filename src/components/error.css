@@ -1,0 +1,107 @@
+.errorfully {
+    background: #ffffff;
+    /* width: 100vw; */
+    /* height: 100vh; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding-top: 18px;
+}
+
+.thanks {
+    font-size: 32px;
+    color: #ffffff;
+}
+
+.fullheight {
+    height: 100%;
+}
+
+.inputdiv {
+    width: 70%;
+}
+
+.long-arrow {
+    margin-right: 4px;
+}
+
+.flexing {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 18px;
+}
+
+.errorfully h2, .errorfully h4, .errorfully h6 {
+    margin: 0px;
+}
+
+.errorfully h4, .errorfully h6 {
+    font-weight: normal;
+}
+
+.errorfully h2 {
+    font-size: 32px;
+}
+
+.errorfully h4 {
+    color: #EE691E;
+    font-size: 20px;
+}
+
+.allf {
+    margin-top: 48px;
+    margin-bottom: 12px;
+    line-height: 32px;
+}
+
+.errorfully .allh {
+    margin-bottom: 12px;
+    line-height: 24px;
+}
+
+.errorfully .allh h6 {
+    font-size: 16px;
+}
+
+.errorfully p {
+    margin-top: 42px;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.errorfully input {
+    padding: 12px;
+    margin-bottom: 12px;
+    background: #E9E9E9;
+    border-radius: 4px;
+    border: 0px;
+    color: #A1A1A1;
+    text-align: center;
+    width: 100%;
+}
+
+.errorfully input:focus-visible {
+    border: 0px;
+    outline: 0px;
+}
+
+.errorfully button {
+    padding: 8px 36px;
+    background: linear-gradient(264deg, #EE691E -8.87%, #680FD2 108.56%);
+    border-radius: 20px;
+    color: #ffffff;
+    margin-bottom: 12px;
+    border: 0px;
+    outline: 0px;
+    cursor: pointer;
+}
+
+.errorfully span {
+    font-size: 12px;
+    line-height: 14px;
+    color: #EE691E;
+    cursor: pointer;
+}
