@@ -444,7 +444,7 @@ const Architecture = (props) => {
     setSee5(false);
   }
   function basic(data) {
-    console.log("form data close", data);
+    // console.log("form data close", data);
     setDisplayBasic(true);
   }
   return (

@@ -39,7 +39,7 @@ const Last = () => {
   // Advanced    You score highly across most cloud cost management capabilities. Reach out to an analyst for ideas on how to improve.
   useEffect(() => {
     // navigate("/");
-    console.log("last page -------------------->");
+    // console.log("last page -------------------->");
     async function fetchData() {
       try {
         const userData = [];
@@ -592,7 +592,7 @@ const Last = () => {
           }
         }
         // console.log("sendingData  - ", sendingData);
-        console.log("sendingPost  - ", sendingPost);
+        // console.log("sendingPost  - ", sendingPost);
         // //console.log("sendingPost ------------------------", sendingPost);
         const res = await axios.post(
           // "https://mlmatassappsvc-6yditixtuq-uc.a.run.app",
@@ -606,7 +606,7 @@ const Last = () => {
           }
         );
 
-        console.log("res.data - ", res?.data);
+        // console.log("res.data - ", res?.data);
         setName(res?.data.firstname);
         setRating(res?.data.rating);
         setRateTxt(res?.data.rating_text);
@@ -705,14 +705,14 @@ const Last = () => {
         // console.log("heloooooo", sendingData, userDetails);
 
         if (!sendingData || !userDetails) {
-          console.log("No data is there");
+          // console.log("No data is there");
           setError(true);
           navigate("/");
         }
       } catch (err) {
-        console.log("error getting----");
+        // console.log("error getting----");
         navigate("/");
-        console.log(err);
+        // console.log(err);
       }
     }
     fetchData();

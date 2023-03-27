@@ -487,7 +487,7 @@ const Purchase = (props) => {
     setSee6(false);
   }
   function basic(data) {
-    console.log("form data close", data);
+    // console.log("form data close", data);
     setDisplayBasic(true);
   }
   return (
