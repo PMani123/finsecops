@@ -51,5 +51,6 @@
       "minify": false,
       "inlineCritical": false
     }
-  }
+  },
+  "homepage":"finsecops"
 }

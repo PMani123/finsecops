@@ -50,6 +50,7 @@ button {
     justify-content: space-between;
     align-items: center;
     /* background: url('../images/headerTopbar.png') no-repeat; */
+    /* background: url('../images/backHeader.png') no-repeat; */
     background: url('../images/backHeader.png') no-repeat;
     background-size: cover;
     background-color: #000000;
@@ -57,6 +58,19 @@ button {
     /* width: 100vw; */
     /* background: linear-gradient(267.82deg, #FF9900 0%, #EE691E 100%); */
     /* padding: 24px 0px; */
+}
+
+.head-left-p2 {
+    padding: 0;
+    font-weight: 400;
+    float: left;
+    width: 100%;
+    text-align: left;
+    font-size: 26px;
+    line-height: 22px;
+    color: #FFFFFF;
+    margin: 4px;
+    margin-left: 12px;
 }
 
 .error-message {
@@ -99,7 +113,7 @@ Link {
     color: #242424;
 }
 
-.head-left-p, .head-left-p2 {
+.head-left-p {
     font-family: Poppins;
     margin: 0;
     font-style: normal;
@@ -359,6 +373,8 @@ input[type='range']::-webkit-slider-thumb {
     float: left;
     margin-top: 36px;
     margin-bottom: 12px;
+    display: flex;
+    align-items: flex-end;
 }
 
 .bred-txt {
@@ -591,7 +607,7 @@ input[type='range']::-webkit-slider-thumb {
 }
 
 .cloudlogo {
-    margin-left: -32%;
+    margin-left: -4%;
     height: 90px;
 }
 
@@ -641,19 +657,6 @@ input[type='range']::-webkit-slider-thumb {
     opacity: 0.4;
 }
 
-.head-left-p2 {
-    font-size: 36px;
-    padding: 0;
-    font-weight: 400;
-    font-size: 32px;
-    line-height: 30px;
-    color: #ee691e;
-    float: left;
-    width: 100%;
-    text-align: left;
-}
-
-
 .head2-ri {
     padding: 100px 160px;
 }
@@ -673,6 +676,7 @@ input[type='range']::-webkit-slider-thumb {
 }
 
 .head-left {
+    display: flex;
     align-items: flex-start;
     flex-direction: column;
     justify-content: space-evenly;

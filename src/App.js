@@ -32,9 +32,9 @@ function App() {
   const [found, setFound] = useState([]);
   const [dataArray, setDataArray] = useState([]);
   useEffect(() => {
-    console.log("data --------", data);
+    // console.log("data --------", data);
     var newAns = Object.keys(data.data);
-    console.log(newAns);
+    // console.log(newAns);
     setDataArray(newAns);
   }, []);
   function found1(data) {
@@ -52,8 +52,8 @@ function App() {
         // alignItems: "center",
       }}
     >
-      <BrowserRouter >
-      {/* <BrowserRouter basename="/finsecops"> */}
+      {/* <BrowserRouter > */}
+      <BrowserRouter basename="/finsecops">
         <Routes>
           <Route path="/chart" element={<Chart />} />
           {/* <Route path="/foundation" element={<Foundation />} /> */}

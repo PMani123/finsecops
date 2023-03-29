@@ -38,6 +38,3 @@ const Header = () => {
 
 export default Header;
 
-
-// csss 
-
