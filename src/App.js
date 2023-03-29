@@ -52,8 +52,8 @@ function App() {
         // alignItems: "center",
       }}
     >
-      {/* <BrowserRouter > */}
-      <BrowserRouter basename="/finsecops">
+      <BrowserRouter >
+      {/* <BrowserRouter basename="/finsecops"> */}
         <Routes>
           <Route path="/chart" element={<Chart />} />
           {/* <Route path="/foundation" element={<Foundation />} /> */}
