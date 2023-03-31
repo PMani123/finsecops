@@ -1,21 +1,17 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import logoFin from "../images/logo-fso.png";
-import { BsChevronLeft } from "react-icons/bs";
-import cloudlogo from "../images/logo-cloudangles.svg";
-import backIcon from "../images/backIcon.svg";
+import logoFin from "../images/finsecopslogo.svg";
 import "./foundation.css";
 import girl from '../images/girl.png';
-import calogo from "../images/CALogo.png"
+import calogo from "../images/CALogo.svg"
 
 const Header = () => {
   return (
     <div>
       <div className="ro-head">
         <div className="head-left">
-          <img src={calogo} alt="" />
+          <img src={calogo} alt="" className="finsecopslogo" />
           <div className="logo-left">
-            <img className="cloudlogo" src={logoFin} alt="cloudlogo" /> <p className="head-left-p2">Maturity Assessment</p>
+            <img className="cloudlogo" src={logoFin} alt="cloudlogo" />
           </div>
           <div>
             <a href="https://www.cloudangles.com/">

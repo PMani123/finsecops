@@ -5,6 +5,10 @@ body {
     overflow-x: hidden;
 }
 
+.finsecopslogo {
+    margin-left: -2%;
+}
+
 p {
     font-family: "Poppins" !important;
 
