@@ -13,10 +13,26 @@ const Header = () => {
           <div className="logo-left">
             <img className="cloudlogo" src={logoFin} alt="cloudlogo" />
           </div>
+          <div className="flex-center">
+            <div>
+              <a target="_blank" href="https://www.cloudangles.com/pages/offers.html#offer2">
+                <button className="btn-head">
+                  Register for Workshop
+                </button>
+              </a>
+            </div>
+            <div>
+              {/* https://www.cloudangles.com/pages/contact.html */}
+              <a target="_blank" href="https://www.cloudangles.com/pages/contact.html">
+                <button className="btn-head">
+                  Talk to Sales
+                </button>
+              </a>
+            </div>
+          </div>
           <div>
-            <a href="https://www.cloudangles.com/">
+            <a target="_blank" href="https://www.cloudangles.com/">
               <button className="btn-head">
-                {/* <img src={backIcon} alt="goback" /> */}
                 <svg
                   width="24"
                   height="25"
@@ -34,6 +50,7 @@ const Header = () => {
               </button>
             </a>
           </div>
+
         </div>
 
         <div className="head-right">

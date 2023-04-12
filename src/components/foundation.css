@@ -612,6 +612,7 @@ input[type='range']::-webkit-slider-thumb {
 
 .cloudlogo {
     margin-left: -4%;
+    height: 90px;
 }
 
 .save-btnx {
@@ -832,4 +833,18 @@ input[type='range']::-webkit-slider-thumb {
 
 .div1-com {
     width: 35%;
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+}
+
+.flex-center button {
+    background: linear-gradient(90deg, #680FD2 0%, #EE691E 100%);
+    border-radius: 22px;
+    border: none;
+    box-shadow: 0 0px 0px 0 rgb(0 0 0 / 20%);
+    transition: all 0.3s ease;
+    padding: 8px 16px;
 }
