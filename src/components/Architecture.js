@@ -14,7 +14,14 @@ import ErrorPage from "./ErrorPage";
 import { Dialog } from "primereact/dialog";
 import { Button } from "primereact/button";
 
+import Formdialog from "./Formdialog";
+import Successdialog from "./Successdialog";
+
 const Architecture = (props) => {
+  
+  const [dialogShow, setDialogShow] = useState(false);
+  const [successShow, setSuccessShow] = useState(false);
+
   const navigate = useNavigate();
   const [fullDone, setFullDone] = useState(false);
   const [screenSize, setScreenSize] = useState(true);
@@ -55,6 +62,23 @@ const Architecture = (props) => {
     height: window.innerHeight,
     width: window.innerWidth,
   });
+
+  
+  function headerPopupchange(data) {
+    setDialogShow(data);
+  }
+
+  function closingForm(data) {
+    if (data === "data got") {
+      setSuccessShow(true)
+    }
+    setDialogShow(false);
+  }
+
+  function closesuccessDialog() {
+    setSuccessShow(false)
+  }
+  
   useEffect(() => {
     function findScreenSize() {
       setDimensions({ height: window.innerHeight, width: window.innerWidth });
@@ -447,11 +471,31 @@ const Architecture = (props) => {
     // console.log("form data close", data);
     setDisplayBasic(true);
   }
+  function headerPopupchange(data) {
+    setDialogShow(data);
+  }
+
+  function closingForm(data) {
+    if (data === "data got") {
+      setSuccessShow(true)
+    }
+    setDialogShow(false);
+  }
+
+  function closesuccessDialog() {
+    setSuccessShow(false)
+  }
   return (
     <div onClick={() => fullquestionclose()}>
       {dimensions.width >= 1024 && screenSize ? (
         <div className="ro-full">
-          <Header />
+          {
+            dialogShow ? <><Formdialog formDialogshow={dialogShow} closeformDialog={closingForm} /></> : <></>
+          }
+          {/* <Formdialog formDialogshow={dialogShow} closeformDialog={closingForm} /> */}
+          <Successdialog successDialog={successShow} closeSuccess={closesuccessDialog} />
+
+          <Header onClick={() => fullquestionclose()} dialog={headerPopupchange} />
 
           {/* {review ? <Review name={closing} /> : <></>} */}
           <Dialog

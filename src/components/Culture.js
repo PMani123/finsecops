@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./foundation.css";
 import comment from "../images/comment.svg";
-import { Link ,useNavigate} from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
 import allData from "../Data/fullData.json";
@@ -14,8 +14,14 @@ import ErrorPage from "./ErrorPage";
 import { Dialog } from "primereact/dialog";
 import { Button } from "primereact/button";
 
+import Formdialog from "./Formdialog";
+import Successdialog from "./Successdialog";
+
 const Culture = (props) => {
-  const navigate=useNavigate();
+
+  const [dialogShow, setDialogShow] = useState(false);
+  const [successShow, setSuccessShow] = useState(false);
+  const navigate = useNavigate();
   const [screenSize, setScreenSize] = useState(true);
 
   const [fullDone, setFullDone] = useState(false);
@@ -59,6 +65,23 @@ const Culture = (props) => {
     height: window.innerHeight,
     width: window.innerWidth,
   });
+
+
+  function headerPopupchange(data) {
+    setDialogShow(data);
+  }
+
+  function closingForm(data) {
+    if (data === "data got") {
+      setSuccessShow(true)
+    }
+    setDialogShow(false);
+  }
+
+  function closesuccessDialog() {
+    setSuccessShow(false)
+  }
+
   useEffect(() => {
     function findScreenSize() {
       setDimensions({ height: window.innerHeight, width: window.innerWidth });
@@ -71,7 +94,7 @@ const Culture = (props) => {
   window.addEventListener("beforeunload", function (e) {
     // console.log('beoferunload');
     // var confirmationMessage = "\o/";
-  
+
     // (e || window.event).returnValue = confirmationMessage; //Gecko + IE
     // return confirmationMessage;                            //Webkit, Safari, Chrome
     localStorage.removeItem("Post-reviewData");
@@ -105,53 +128,54 @@ const Culture = (props) => {
 
   useEffect(() => {
     //console.log("1st Useffect");
-    try{
-    function findScreenSize() {
-      if (window.innerWidth < 1024 ) {
-        setScreenSize(false);
+    try {
+      function findScreenSize() {
+        if (window.innerWidth < 1024) {
+          setScreenSize(false);
+        }
+      }
+
+      window.addEventListener("resize", findScreenSize());
+
+      var newData = JSON.parse(localStorage.getItem("culture"));
+      if (newData) {
+        //console.log("newdata is ", newData);
+        for (let i = 0; i < newData.length; i++) {
+          // //console.log(`hi ${i} `, newData[i]);
+          var jjds = Object.values(newData[i]);
+          if (i === 0) {
+            //console.log("jjdsfgf", jjds[0].answer);
+          } else {
+          }
+          //console.log("sf1", newData);
+        }
+        for (let i = 0; i < newData.length; i++) {
+          // //console.log(`hi ${i} `, newData[i]);
+          var jjds = Object.values(newData[i]);
+          if (i === 0) {
+            //console.log("jjdsfgf", jjds[0].answer);
+            setRole1ans(jjds[0].answer);
+            setRole1com(jjds[0].comment);
+          } else if (i === 1) {
+            setRole2ans(jjds[0].answer);
+            setRole2com(jjds[0].comment);
+          } else if (i === 2) {
+            setRole3ans(jjds[0].answer);
+            setRole3com(jjds[0].comment);
+          } else if (i === 3) {
+            setRole4ans(jjds[0].answer);
+            setRole4com(jjds[0].comment);
+          } else if (i === 4) {
+            setRole5ans(jjds[0].answer);
+            setRole5com(jjds[0].comment);
+          } else if (i === 5) {
+            setRole6ans(jjds[0].answer);
+            setRole6com(jjds[0].comment);
+          }
+          //console.log("sf1", newData);
+        }
       }
     }
-
-    window.addEventListener("resize", findScreenSize());
-
-    var newData = JSON.parse(localStorage.getItem("culture"));
-    if (newData) {
-      //console.log("newdata is ", newData);
-      for (let i = 0; i < newData.length; i++) {
-        // //console.log(`hi ${i} `, newData[i]);
-        var jjds = Object.values(newData[i]);
-        if (i === 0) {
-          //console.log("jjdsfgf", jjds[0].answer);
-        } else {
-        }
-        //console.log("sf1", newData);
-      }
-      for (let i = 0; i < newData.length; i++) {
-        // //console.log(`hi ${i} `, newData[i]);
-        var jjds = Object.values(newData[i]);
-        if (i === 0) {
-          //console.log("jjdsfgf", jjds[0].answer);
-          setRole1ans(jjds[0].answer);
-          setRole1com(jjds[0].comment);
-        } else if (i === 1) {
-          setRole2ans(jjds[0].answer);
-          setRole2com(jjds[0].comment);
-        } else if (i === 2) {
-          setRole3ans(jjds[0].answer);
-          setRole3com(jjds[0].comment);
-        } else if (i === 3) {
-          setRole4ans(jjds[0].answer);
-          setRole4com(jjds[0].comment);
-        } else if (i === 4) {
-          setRole5ans(jjds[0].answer);
-          setRole5com(jjds[0].comment);
-        } else if (i === 5) {
-          setRole6ans(jjds[0].answer);
-          setRole6com(jjds[0].comment);
-        }
-        //console.log("sf1", newData);
-      }
-    }}
     catch (error) {
       navigate("/");
       window.location.reload(false);
@@ -413,7 +437,7 @@ const Culture = (props) => {
           label="Complete"
           // icon="pi pi-check"
           // onClick={() => onClick("displayForm")}
-          onClick={() => {onClick("displayForm"); onHide("displayBasic") }}
+          onClick={() => { onClick("displayForm"); onHide("displayBasic") }}
           autoFocus
           className="complete-fin"
         />
@@ -479,17 +503,22 @@ const Culture = (props) => {
     setSee5(false);
     setSee6(false);
   }
-  function basic(data){
-    
+  function basic(data) {
+
     setDisplayBasic(true);
   }
   return (
     <div onClick={() => fullquestionclose()}>
-      {dimensions.width >= 1024 &&  screenSize ? (
+      {dimensions.width >= 1024 && screenSize ? (
         <div className="ro-full">
-          <Header />
 
-          {/* {review ? <Review name={closing} /> : <></>} */}
+          {
+            dialogShow ? <><Formdialog formDialogshow={dialogShow} closeformDialog={closingForm} /></> : <></>
+          }
+          <Successdialog successDialog={successShow} closeSuccess={closesuccessDialog} />
+
+          <Header onClick={() => fullquestionclose()} dialog={headerPopupchange} />
+
           <Dialog
             header="Review"
             visible={displayBasic}
@@ -512,11 +541,11 @@ const Culture = (props) => {
 
             // footer={renderFooter1("displayForm")}
             // onHide={() => onHide("displayForm")}
-            onHide={() => {onHide("displayForm");setDisplayBasic(true)}}
+            onHide={() => { onHide("displayForm"); setDisplayBasic(true) }}
 
           >
             {/* <h2>HelloWorld</h2> */}
-            <Form linkform={formSubmit} backForm={changeingformdis} view={basic}/>
+            <Form linkform={formSubmit} backForm={changeingformdis} view={basic} />
           </Dialog>
 
           {/* {form ? <Form /> :<></>  } */}
@@ -562,7 +591,7 @@ const Culture = (props) => {
                   <button
                     className={`com-btn ${fullDone ? "" : "revi-pen"}`}
                     onClick={() => onClick("displayBasic")}
-                    // onClick={() => setReview(!review)}
+                  // onClick={() => setReview(!review)}
                   >
                     Review <BsChevronRight />
                   </button>
@@ -571,8 +600,8 @@ const Culture = (props) => {
                     <div className="btn-hovering">
                       <button
                         className={"com-btn revi-pen"}
-                        // onClick={() => onClick("displayBasic")}
-                        // onClick={() => setReview(!review)}
+                      // onClick={() => onClick("displayBasic")}
+                      // onClick={() => setReview(!review)}
                       >
                         Review <BsChevronRight />
                       </button>
@@ -806,36 +835,36 @@ const Culture = (props) => {
                     /> */}
                       </div>
                       {seeing ? (
-                       <div className="div-comment">
-                       <div
-                       className="div1-com"
-                         onClick={(e) => {
-                           e.preventDefault();
-                           e.stopPropagation();
-                         }}
-                       >
-                         <textarea
-                           rows="3"
-                           type="text"
-                           autoFocus
-                           name={data.no}
-                           placeholder="Write your comment here.."
-                           value={data.comment}
-                           onChange={(e) => changing(e)}
-                           className="comment-input"
-                         />
-                         <button
-                           onClick={(e) => {
-                             commentDisplay(data.no);
-                           }}
-                           className={
-                             data.comment ? `save-btnx` : `save-btnx1`
-                           }
-                         >
-                           Save
-                         </button>
-                       </div>
-                     </div>
+                        <div className="div-comment">
+                          <div
+                            className="div1-com"
+                            onClick={(e) => {
+                              e.preventDefault();
+                              e.stopPropagation();
+                            }}
+                          >
+                            <textarea
+                              rows="3"
+                              type="text"
+                              autoFocus
+                              name={data.no}
+                              placeholder="Write your comment here.."
+                              value={data.comment}
+                              onChange={(e) => changing(e)}
+                              className="comment-input"
+                            />
+                            <button
+                              onClick={(e) => {
+                                commentDisplay(data.no);
+                              }}
+                              className={
+                                data.comment ? `save-btnx` : `save-btnx1`
+                              }
+                            >
+                              Save
+                            </button>
+                          </div>
+                        </div>
                       ) : (
                         <></>
                       )}

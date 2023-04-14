@@ -3,8 +3,14 @@ import logoFin from "../images/finsecopslogo.svg";
 import "./foundation.css";
 import girl from '../images/girl.png';
 import calogo from "../images/CALogo.svg"
+import phone from "../images/phone.png"
 
-const Header = () => {
+const Header = ({ dialog }) => {
+
+  function contactCare(e) {
+    dialog(true)
+  }
+
   return (
     <div>
       <div className="ro-head">
@@ -15,23 +21,22 @@ const Header = () => {
           </div>
           <div className="flex-center">
             <div>
-              <a target="_blank" href="https://www.cloudangles.com/pages/offers.html#offer2">
-                <button className="btn-head">
+              <a target="_blank" rel="noopener" href="https://www.cloudangles.com/pages/offers.html#offer2">
+                <button className="btn-head purple">
                   Register for Workshop
                 </button>
               </a>
             </div>
             <div>
-              {/* https://www.cloudangles.com/pages/contact.html */}
-              <a target="_blank" href="https://www.cloudangles.com/pages/contact.html">
-                <button className="btn-head">
-                  Talk to Sales
-                </button>
-              </a>
+              {/* <a target="_blank" rel="noopener" href="https://www.cloudangles.com/pages/contact.html"> */}
+              <button className="btn-head white sales" onClick={(e) => { contactCare(e) }} >
+                <img src={phone} alt="Phone Icon" />  Talk to Sales
+              </button>
+              {/* </a> */}
             </div>
           </div>
           <div>
-            <a target="_blank" href="https://www.cloudangles.com/">
+            <a target="_blank" rel="noopener" href="https://www.cloudangles.com/">
               <button className="btn-head">
                 <svg
                   width="24"

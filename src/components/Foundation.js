@@ -17,7 +17,17 @@ import ErrorPage from "./ErrorPage";
 import { Dialog } from "primereact/dialog";
 import { Button } from "primereact/button";
 
+import { Dropdown } from "primereact/dropdown";
+import Formdialog from "./Formdialog";
+import Successdialog from "./Successdialog";
+
 const Foundation = (props) => {
+
+  const [dialogShow, setDialogShow] = useState(false);
+  const [successShow, setSuccessShow] = useState(false);
+  // const [code, setCode] = useState(null);
+  // const [success, setSuccess] = useState(false);
+ 
   const navigate = useNavigate();
   const [completed, setCompleted] = useState(false);
   const [fullDone, setFullDone] = useState(false);
@@ -49,6 +59,7 @@ const Foundation = (props) => {
     height: window.innerHeight,
     width: window.innerWidth,
   });
+
   useEffect(() => {
     function findScreenSize() {
       setDimensions({ height: window.innerHeight, width: window.innerWidth });
@@ -106,7 +117,7 @@ const Foundation = (props) => {
 
       var newData = JSON.parse(localStorage.getItem("foundation"));
       // console.log('getting found',newData);
- 
+
       if (newData) {
         for (let i = 0; i < newData.length; i++) {
           var jjds = Object.values(newData[i]);
@@ -292,11 +303,6 @@ const Foundation = (props) => {
     setDisplayForm(data);
   }
 
-  // console.log("found1ans", found1ans);
-  // console.log("found1com", found1com);
-  // console.log("found2ans", found2ans);
-  // console.log("found2com", found2com);
-
   allData.Foundation.map((ele, idx) => {
     if (idx === 0) {
       ele["answer"] = found1ans;
@@ -312,18 +318,37 @@ const Foundation = (props) => {
     setSee2(false);
   }
   function basic(data) {
-    // console.log('form data close',data);
     setDisplayBasic(true);
   }
-  // console.log("allData foundation", allData.Foundation);
+
+  function headerPopupchange(data) {
+    setDialogShow(data);
+  }
+
+  function closingForm(data) {
+    if (data === "data got") {
+      setSuccessShow(true)
+    }
+    setDialogShow(false);
+  }
+
+  function closesuccessDialog() {
+    setSuccessShow(false)
+  }
+
   return (
     <div onClick={() => fullquestionclose()}>
       {dimensions.width >= 1024 && screenSize ? (
         <div>
           <div className="ro-full">
-            <Header onClick={() => fullquestionclose()} />
-            {/* <button id="submit-btn">Submit</button> */}
-            {/* {review ? <Review name={closing} /> : <></>} */}
+
+            {
+              dialogShow ? <><Formdialog formDialogshow={dialogShow} closeformDialog={closingForm} /></> : <></>
+            }
+            <Successdialog successDialog={successShow} closeSuccess={closesuccessDialog} />
+
+            <Header onClick={() => fullquestionclose()} dialog={headerPopupchange} />
+
             <div className="re-middle">
               <Dialog
                 header="Review"

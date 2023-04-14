@@ -260,9 +260,7 @@ a {
     margin-right: 20px;
 }
 
-.p-dialog .p-dialog-header {
-    border-bottom: 2px solid #e0e0e0 !important;
-}
+
 
 .edit-fin:focus {
     box-shadow: none !important;
@@ -841,10 +839,158 @@ input[type='range']::-webkit-slider-thumb {
 }
 
 .flex-center button {
-    background: linear-gradient(90deg, #680FD2 0%, #EE691E 100%);
     border-radius: 22px;
     border: none;
     box-shadow: 0 0px 0px 0 rgb(0 0 0 / 20%);
     transition: all 0.3s ease;
     padding: 8px 16px;
+}
+
+.purple {
+    background: #680FD2;
+}
+
+.white {
+    background: #ffffff;
+}
+
+.sales {
+    color: #ee691e;
+}
+
+.btn-head img {
+    margin-right: 8px;
+}
+
+.p-dialog .p-dialog-header {
+    padding: 16px !important;
+}
+
+.formcontact {
+    margin-top: 32px;
+}
+
+.formcontact input, .formcontact select {
+    padding: 8px 12px;
+    width: 100%;
+    background: #F1F1F1;
+    border-radius: 4px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color: #AAAAAA;
+    margin-bottom: 12px;
+    border: none;
+    outline: none;
+}
+
+.formcontact .p-dropdown {
+    width: 100%;
+    margin-bottom: 12px;
+
+}
+
+#pr_id_68 .p-dialog .p-dialog-header {
+    border-bottom: 1px solid #e0e0e0 !important;
+}
+
+#pr_id_61 .p-dialog .p-dialog-header {
+    border: none !important;
+
+}
+
+
+.formcontact {
+    position: relative;
+}
+
+.mandatory {
+    margin: 0px;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    text-align: center;
+    color: #242424;
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.submitbtncontact {
+    position: absolute;
+    margin: 0px;
+    margin-left: -3rem;
+    bottom: -18%;
+    background: linear-gradient(268.4deg, #EE691E 0%, #680FD2 99.75%);
+    border: none;
+    outline: none;
+    padding: 8px 36px;
+    border-radius: 66px;
+    color: #ffffff;
+}
+
+.p-dialog-content {
+    overflow: inherit !important;
+}
+
+
+.p-dialog .p-dialog-header-icons:focus-visible {
+    border: none;
+    outline: none;
+}
+
+.p-dialog .p-dialog-header .p-dialog-header-icon:focus-visible, .p-dialog .p-dialog-header .p-dialog-header-icon:focus, .p-dialog .p-dialog-header .p-dialog-header-icon:hover {
+    border: none;
+}
+
+.p-dropdown:hover {
+    border: 1px solid #ced4da !important;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.successpopup h4 {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 48px;
+    text-align: center;
+    color: #000000;
+    margin: 16px 0px;
+
+}
+
+.successpopup p {
+    margin: 0px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    text-align: center;
+    color: #444444;
+}
+
+.lineform {
+    width: 115%;
+    margin-left: -7%;
+    height: 1px;
+    background: #E0E0E0;
+}
+
+.p-dialog .p-dialog-header .p-dialog-header-icon {
+
+    background: transparent;
+}
+
+.p-dialog .p-dialog-header .p-dialog-header-icon:focus {
+    box-shadow: none !important;
 }

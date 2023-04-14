@@ -14,7 +14,13 @@ import ErrorPage from "./ErrorPage";
 import { Dialog } from "primereact/dialog";
 import { Button } from "primereact/button";
 
+import Formdialog from "./Formdialog";
+import Successdialog from "./Successdialog";
+
 const Roles = (props) => {
+
+  const [dialogShow, setDialogShow] = useState(false);
+  const [successShow, setSuccessShow] = useState(false);
   const navigate = useNavigate();
   const [fullDone, setFullDone] = useState(false);
   const [screenSize, setScreenSize] = useState(true);
@@ -55,6 +61,25 @@ const Roles = (props) => {
     height: window.innerHeight,
     width: window.innerWidth,
   });
+
+
+
+
+  function headerPopupchange(data) {
+    setDialogShow(data);
+  }
+
+  function closingForm(data) {
+    if (data === "data got") {
+      setSuccessShow(true)
+    }
+    setDialogShow(false);
+  }
+
+  function closesuccessDialog() {
+    setSuccessShow(false)
+  }
+
   useEffect(() => {
     function findScreenSize() {
       setDimensions({ height: window.innerHeight, width: window.innerWidth });
@@ -448,11 +473,15 @@ const Roles = (props) => {
   }
   return (
     <div onClick={() => fullquestionclose()}>
-      {dimensions.width >= 1024 &&  screenSize ? (
+      {dimensions.width >= 1024 && screenSize ? (
         <div className="ro-full">
-          <Header />
+          {
+            dialogShow ? <><Formdialog formDialogshow={dialogShow} closeformDialog={closingForm} /></> : <></>
+          }
+          <Successdialog successDialog={successShow} closeSuccess={closesuccessDialog} />
 
-          {/* {review ? <Review name={closing} /> : <></>} */}
+          <Header onClick={() => fullquestionclose()} dialog={headerPopupchange} />
+
           <Dialog
             header="Review"
             visible={displayBasic}
@@ -530,7 +559,7 @@ const Roles = (props) => {
                   <button
                     className={`com-btn ${fullDone ? "" : "revi-pen"}`}
                     onClick={() => onClick("displayBasic")}
-                    // onClick={() => setReview(!review)}
+                  // onClick={() => setReview(!review)}
                   >
                     Review <BsChevronRight />
                   </button>
@@ -539,8 +568,8 @@ const Roles = (props) => {
                     <div className="btn-hovering">
                       <button
                         className={"com-btn revi-pen"}
-                        // onClick={() => onClick("displayBasic")}
-                        // onClick={() => setReview(!review)}
+                      // onClick={() => onClick("displayBasic")}
+                      // onClick={() => setReview(!review)}
                       >
                         Review <BsChevronRight />
                       </button>
@@ -745,36 +774,36 @@ const Roles = (props) => {
                   /> */}
                       </div>
                       {seeing ? (
-                       <div className="div-comment">
-                       <div
-                       className="div1-com"
-                         onClick={(e) => {
-                           e.preventDefault();
-                           e.stopPropagation();
-                         }}
-                       >
-                         <textarea
-                           rows="3"
-                           type="text"
-                           autoFocus
-                           name={data.no}
-                           placeholder="Write your comment here.."
-                           value={data.comment}
-                           onChange={(e) => changing(e)}
-                           className="comment-input"
-                         />
-                         <button
-                           onClick={(e) => {
-                             commentDisplay(data.no);
-                           }}
-                           className={
-                             data.comment ? `save-btnx` : `save-btnx1`
-                           }
-                         >
-                           Save
-                         </button>
-                       </div>
-                     </div>
+                        <div className="div-comment">
+                          <div
+                            className="div1-com"
+                            onClick={(e) => {
+                              e.preventDefault();
+                              e.stopPropagation();
+                            }}
+                          >
+                            <textarea
+                              rows="3"
+                              type="text"
+                              autoFocus
+                              name={data.no}
+                              placeholder="Write your comment here.."
+                              value={data.comment}
+                              onChange={(e) => changing(e)}
+                              className="comment-input"
+                            />
+                            <button
+                              onClick={(e) => {
+                                commentDisplay(data.no);
+                              }}
+                              className={
+                                data.comment ? `save-btnx` : `save-btnx1`
+                              }
+                            >
+                              Save
+                            </button>
+                          </div>
+                        </div>
                       ) : (
                         <></>
                       )}
