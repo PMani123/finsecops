@@ -7,6 +7,10 @@ import axios from "axios";
 import begineer from "../images/beginner.png";
 import intermediate from "../images/inter.png";
 import advance from "../images/advance.png";
+import Successdialog from "./Successdialog";
+import { Dialog } from "primereact/dialog";
+import Form from "./Form";
+
 
 import { Link, useNavigate } from "react-router-dom";
 
@@ -20,6 +24,10 @@ const Last = () => {
     // tooltips: {enabled: false},
     // hover:{mode:null},
   };
+  const [dialogShow, setDialogShow] = useState(false);
+  const [displayForm, setDisplayForm] = useState(false);
+  const [formSubmit, setFormsubmit] = useState(false);
+
   const [chartData, setChartData] = useState({});
   const [error, setError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
@@ -33,6 +41,10 @@ const Last = () => {
   const [begi, setBegi] = useState(false);
   const [inter, setInter] = useState(false);
   const [advan, setAdvan] = useState(false);
+  const [successShow, setSuccessShow] = useState(false);
+  const [displayBasic, setDisplayBasic] = useState(false);
+
+
 
   // const beginner="You're in the early stages of developing your cloud cost management capabilities."
   //  const  intermediate   = You have many of the basic best practices in place, and are moving on to optimizing.
@@ -675,32 +687,32 @@ const Last = () => {
         });
         setIsLoading(false);
 
-        localStorage.removeItem("Post-reviewData");
-        localStorage.removeItem("userDetails");
+        // localStorage.removeItem("Post-reviewData");
+        // localStorage.removeItem("userDetails");
 
-        localStorage.removeItem("foundDone");
-        localStorage.removeItem("roleDone");
-        localStorage.removeItem("culDone");
-        localStorage.removeItem("archiDone");
-        localStorage.removeItem("visiDone");
-        localStorage.removeItem("budgetDone");
-        localStorage.removeItem("govDone");
-        localStorage.removeItem("valueDone");
-        localStorage.removeItem("rightDone");
-        localStorage.removeItem("purDone");
-        localStorage.removeItem("processDone");
+        // localStorage.removeItem("foundDone");
+        // localStorage.removeItem("roleDone");
+        // localStorage.removeItem("culDone");
+        // localStorage.removeItem("archiDone");
+        // localStorage.removeItem("visiDone");
+        // localStorage.removeItem("budgetDone");
+        // localStorage.removeItem("govDone");
+        // localStorage.removeItem("valueDone");
+        // localStorage.removeItem("rightDone");
+        // localStorage.removeItem("purDone");
+        // localStorage.removeItem("processDone");
 
-        localStorage.removeItem("foundation");
-        localStorage.removeItem("roles");
-        localStorage.removeItem("culture");
-        localStorage.removeItem("archi");
-        localStorage.removeItem("visi");
-        localStorage.removeItem("budget");
-        localStorage.removeItem("governance");
-        localStorage.removeItem("value");
-        localStorage.removeItem("right");
-        localStorage.removeItem("purchase");
-        localStorage.removeItem("process");
+        // localStorage.removeItem("foundation");
+        // localStorage.removeItem("roles");
+        // localStorage.removeItem("culture");
+        // localStorage.removeItem("archi");
+        // localStorage.removeItem("visi");
+        // localStorage.removeItem("budget");
+        // localStorage.removeItem("governance");
+        // localStorage.removeItem("value");
+        // localStorage.removeItem("right");
+        // localStorage.removeItem("purchase");
+        // localStorage.removeItem("process");
 
         // console.log("heloooooo", sendingData, userDetails);
 
@@ -718,6 +730,30 @@ const Last = () => {
     fetchData();
   }, []);
 
+  function headerPopupchange(data) {
+    setDialogShow(data);
+  }
+
+  function closesuccessDialog() {
+    setSuccessShow(false)
+  }
+  const onHide = (name) => {
+    dialogFuncMap[`${name}`](false);
+  };
+  function basic(data) {
+    setDisplayBasic(true);
+  }
+  function changeingformdis(data) {
+    setFormsubmit(data);
+    // console.log("close");
+    setDisplayForm(data);
+  }
+
+  const dialogFuncMap = {
+    displayBasic: setDisplayBasic,
+    displayForm: setDisplayForm,
+  };
+
   return (
     <div className="last-fulling">
       {isLoading ? (
@@ -727,7 +763,25 @@ const Last = () => {
         </div>
       ) : (
         <div>
-          <Header />
+          <Header dialog={headerPopupchange} />
+          <Successdialog successDialog={successShow} closeSuccess={closesuccessDialog} />
+
+          <Dialog
+            header="Personal Info"
+            visible={displayForm}
+            className="dialog-header form-personal"
+            onHide={() => {
+              onHide("displayForm");
+              setDisplayBasic(true);
+            }}
+          >
+            {/* <h2>HelloWorld</h2> */}
+            <Form
+              linkform={formSubmit}
+              backForm={changeingformdis}
+              view={basic}
+            />
+          </Dialog>
 
           {error ? (
             <h2>

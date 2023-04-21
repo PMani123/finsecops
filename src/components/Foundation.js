@@ -317,6 +317,7 @@ const Foundation = (props) => {
     setSee1(false);
     setSee2(false);
   }
+  
   function basic(data) {
     setDisplayBasic(true);
   }
@@ -345,6 +346,7 @@ const Foundation = (props) => {
             {
               dialogShow ? <><Formdialog formDialogshow={dialogShow} closeformDialog={closingForm} /></> : <></>
             }
+           
             <Successdialog successDialog={successShow} closeSuccess={closesuccessDialog} />
 
             <Header onClick={() => fullquestionclose()} dialog={headerPopupchange} />
