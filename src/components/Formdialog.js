@@ -7,7 +7,6 @@ const Formdialog = ({ formDialogshow, closeformDialog }) => {
     const [show, setShow] = useState(false)
 
     useEffect(() => {
-        // console.log("show dialog-----", formDialogshow);
         setShow(formDialogshow)
         if (state.succeeded) {
             console.log("state  successfully   ---------", state);
@@ -264,7 +263,6 @@ const Formdialog = ({ formDialogshow, closeformDialog }) => {
     return (
         <div>
             <Dialog header="Talk to sales" visible={show} style={{ width: '350px' }} onHide={() => closeformDialog("close")}>
-                {/* <Dialog header="Talk to sales" visible={true} style={{ width: '350px' }} onHide={() => closeformDialog()}> */}
                 <div className='lineform'></div>
                 <div className="formcontact">
                     <form onSubmit={handleSubmit} >

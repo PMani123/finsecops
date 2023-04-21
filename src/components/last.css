@@ -86,3 +86,8 @@
 .last-fulling {
     height: 750px;
 }
+
+.re-full {
+    height: 40vh;
+    overflow-y: scroll;
+}
