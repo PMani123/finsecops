@@ -7,25 +7,52 @@ import { useForm, ValidationError } from '@formspree/react';
 import { useNavigate } from 'react-router-dom'
 
 const ErrorPage = () => {
-    const [value, setValue] = useState("")
     const [state, handleSubmit] = useForm("mqkoddve");
-    const navigate = useNavigate()
+    const [value, setValue] = useState("");
+    const navigate = useNavigate();
+    const [err, setErr] = useState("");
 
-    if (state.succeeded) {
-        console.log("state ---------", state);
-        navigate("/sent")
-        // return <p className='thanks' >Thanks for joining!</p>;
-    }
+    // if (state.succeeded) {
+    //     console.log("state ---------", state);
+    //     navigate("/sent")
+    //     // return <p className='thanks' >Thanks for joining!</p>;
+    // }
 
-    async function formSubmit(e) {
-        e.preventDefault()
-        console.log("value ----", value)
-        const res = await axios.post("hi")
+    async function handleSubmit1(e) {
+        try {
+            e.preventDefault();
+            console.log("value----", value, typeof value);
+
+
+            if (value.includes("gmail") ||
+                value.includes("yahoo") ||
+                value.includes("outlook") ||
+                value.includes("protonmail") ||
+                value.includes("zoho") ||
+                value.includes("icloud")) {
+                setErr("Only Organisation Mail should be Used");
+                setTimeout(() => {
+                    setErr("");
+                }, 3000)
+                setValue("");
+            } else {
+                // console.log("success");
+                const res = await axios.post(`https://formspree.io/f/mqkoddve`, { email: value });
+                console.log("res-----", res);
+                if (res.data.next.includes("thanks")) {
+                    setValue("");
+                    navigate("/sent");
+                }
+            }
+        }
+        catch (e) {
+            console.log("error---", e);
+        }
     }
 
     return (
         <div className='errorfully'>
-            <form style={{ width: "100%" }} onSubmit={handleSubmit} >
+            <form style={{ width: "100%" }} onSubmit={handleSubmit1} >
                 <div className="flexing d-flex">
                     <img src={errorimage} alt="" className="errorimage1" />
                     <div className='allf'>
@@ -37,7 +64,13 @@ const ErrorPage = () => {
                     </div>
                     <p>Kindly provide your email address and we'll send you the link to the assessment tool.</p>
                     <div className='inputdiv'>
-                        <input id="email" type="email" name="email" required placeholder="Enter your email" />
+                        <input id="email" type="email" value={value} onChange={(e) => setValue(e.target.value)} name="email" required placeholder="Enter your email" /><br />
+                        <span className='error-message' > {err} </span>
+                        <ValidationError
+                            prefix="Email"
+                            field="email"
+                            errors={state.errors}
+                        />
                     </div>
                     <button>Get Link</button>
                     <a href="https://www.cloudangles.com/">

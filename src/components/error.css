@@ -105,3 +105,7 @@
     color: #EE691E;
     cursor: pointer;
 }
+
+.error-message {
+    color: red;
+}

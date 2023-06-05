@@ -282,7 +282,6 @@ const Form = (props) => {
     },
     validate: (data) => {
       let errors = {};
-
       if (!data.name) {
         errors.name = "Name is required.";
       }

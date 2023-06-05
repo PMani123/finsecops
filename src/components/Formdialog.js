@@ -12,7 +12,7 @@ const Formdialog = ({ formDialogshow, closeformDialog }) => {
             console.log("state  successfully   ---------", state);
             closeformDialog("data got");
         }
-    }, [formDialogshow, state])
+    }, [formDialogshow, state]);
 
     const countries = [
         { name: "Afghanistan (+93) ", code: "+93" },
